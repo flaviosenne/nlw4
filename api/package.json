@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "orm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "jest set NODE_ENV = test"
+    "test": "jest && set NODE_ENV=test && rm ./src/database/database.test.sqlite",
+    "posttest": "rm ./src/database/database.test.sqlite"
   },
   "dependencies": {
     "express": "^4.17.1",
