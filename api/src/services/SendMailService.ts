@@ -1,5 +1,7 @@
 import nodemailer, { Transporter } from 'nodemailer'
 import { MailOptions } from 'nodemailer/lib/json-transport';
+import handlebars from 'handlebars'
+import fs from 'fs'
 
 
 class SendMailService {
@@ -23,12 +25,18 @@ class SendMailService {
             .catch(e => console.log(e))
     }
 
-    async execute(to: string, subject: string, body: string) {
+    async execute(to: string, subject: string, variables: object, path: string) {
+       const templateFileContent = fs.readFileSync(path).toString("utf8")
+
+        const mailTemplateParse = handlebars.compile(templateFileContent)
+        
+        const html = mailTemplateParse(variables)
+
         const options: MailOptions = {
             from: 'NPS <noreplay@rocketseat.com>',
             to, 
             subject,
-            html: body,
+            html,
         }
         const message = await this.client.sendMail(options)
         console.log('Message sent: %s', message.messageId)

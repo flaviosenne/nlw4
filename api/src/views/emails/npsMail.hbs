@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .container{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 18pt;
+        text-align: center;
+    }
+    .card{
+        margin: 0 auto;
+    }
+    .card-body{
+        width: 90%;
+        height: 90vh;
+        margin: 0 auto;
+        display: grid;
+
+    }
+    .card-body a{
+        text-decoration: none;
+        color: rgb(185, 177, 177);
+        background: rgb(68, 24, 24);
+        border-radius: 12px;
+        padding: 10px;
+    }
+    .card-body a:hover{
+        background: rgba(68, 24, 24, 0.6);
+
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}</p>
+                <p class="card-text">{{url}}</p>
+                <p class="card-text">{{user_id}}</p>
+                <div class="answers">
+                    
+                    <a class="btn btn-primary" href= "{{url}}/1?u={{user_id}}">1</a>
+                    <a class="btn btn-primary" href= "{{url}}/2?u={{user_id}}">2</a>
+                    <a class="btn btn-primary" href= "{{url}}/3?u={{user_id}}">3</a>
+                    <a class="btn btn-primary" href= "{{url}}/4?u={{user_id}}">4</a>
+                    <a class="btn btn-primary" href= "{{url}}/5?u={{user_id}}">5</a>
+                    <a class="btn btn-primary" href= "{{url}}/6?u={{user_id}}">6</a>
+                    <a class="btn btn-primary" href= "{{url}}/7?u={{user_id}}">7</a>
+                    <a class="btn btn-primary" href= "{{url}}/8?u={{user_id}}">8</a>
+                    <a class="btn btn-primary" href= "{{url}}/9?6u={{user_id}}">9</a>
+                    <a class="btn btn-primary" href= "{{url}}/10?u={{user_id}}">10</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
