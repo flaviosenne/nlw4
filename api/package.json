@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "orm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "jest && set NODE_ENV=test && rm ./src/database/database.test.sqlite",
-    "posttest": "rm ./src/database/database.test.sqlite"
+    "test": "jest && set NODE_ENV=test && rm ./src/database/database.test.sqlite"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
