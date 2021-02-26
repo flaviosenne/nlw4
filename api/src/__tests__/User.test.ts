@@ -1,3 +1,4 @@
+import { getConnection } from 'typeorm';
 import request from 'supertest'
 import { app } from '../app'
 
@@ -8,8 +9,9 @@ describe('Users', () => {
         await connection.runMigrations()
     })
     afterAll(async () => {
-        const connection = await createConnection()
+        const connection = getConnection()
         await connection.dropDatabase()
+        await connection.close()
 
     })
 
